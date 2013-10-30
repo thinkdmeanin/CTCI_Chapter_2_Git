@@ -36,8 +36,12 @@ public class MyNode {
 	}
 	
 	public MyNode appendTail (int value) {
-		this.setNext(new MyNode(value));
-		return this.getNext();
+			// one stupid design here before is return the element next before the tail
+			// now always returns head
+		MyNode tail = this;
+		while (tail.getNext() != null) tail = tail.getNext();	// find tail
+		tail.setNext(new MyNode(value));	// append to tail
+		return this;	// return head
 	}
 	
 	public boolean printList() {
