@@ -11,5 +11,6 @@ public class TestBench_2_0 {
 			}
 			n = n.next;
 		}
+		return head;
 	}
 }
