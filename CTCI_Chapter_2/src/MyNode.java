@@ -44,6 +44,12 @@ public class MyNode {
 		return this;	// return head
 	}
 	
+	public MyNode appendHead (int value) {
+		MyNode newHead = new MyNode(value);
+		newHead.setNext(this);
+		return newHead;
+	}
+	
 	public boolean printList() {
 		System.out.printf("%d ", value);
 		if (getNext() != null) getNext().printList();
