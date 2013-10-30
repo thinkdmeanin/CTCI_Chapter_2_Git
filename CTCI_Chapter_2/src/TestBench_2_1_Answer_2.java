@@ -7,6 +7,16 @@ public class TestBench_2_1_Answer_2 {
 			LinkedListNode runner = head;
 			while (runner != current) { // Check for earlier dups
 				if (runner.data == current.data) {
+					LinkedListNode tmp = current.next; // remove current
+					previous.next = tmp;
+					current = tmp; // update current to next node
+					break; // all other dups have already been removed
+				}
+				runner = runner.next;
+			}
+			if (runner == current) { // current not updated -update now
+				previous = current;
+				current = current.next;
 			}
 		}
 	}
