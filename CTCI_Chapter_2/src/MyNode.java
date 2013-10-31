@@ -50,6 +50,12 @@ public class MyNode {
 		return newHead;
 	}
 	
+	public MyNode getTail() {
+		MyNode tail = this;
+		while (tail.getNext() != null) tail = tail.getNext();	// find tail
+		return tail;
+	}
+	
 	public boolean printList() {
 		System.out.printf("%d ", value);
 		if (getNext() != null) getNext().printList();
